@@ -3,36 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Cendrawasih Airlift: a bush-plane courier game over the Indonesian archipelago. Fly rings, drop cargo, land on island strips.">
-<title>Cendrawasih Airlift — Island Courier Flight</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background: #0b1c2c;
-    overflow: hidden;
-  }
-  #game {
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    touch-action: none;
-    cursor: crosshair;
-  }
-</style>
+<title>Cendrawasih Airlift — Papua Bush Courier</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="game" width="1280" height="800"></canvas>
-<script src="src/config.js"></script>
-<script src="src/random.js"></script>
-<script src="src/world.js"></script>
-<script src="src/plane.js"></script>
-<script src="src/missions.js"></script>
-<script src="src/audio.js"></script>
-<script src="src/render.js"></script>
-<script src="src/input.js"></script>
-<script src="src/main.js"></script>
+<noscript><p style="color:#fff;text-align:center;padding:2em">Cendrawasih Airlift needs JavaScript — the whole game is code. Please enable it and reload.</p></noscript>
+<div id="stage">
+  <canvas id="game" width="1280" height="720"></canvas>
+  <div id="help">
+    <span><b>↑ / ↓</b> pitch</span>
+    <span><b>← / →</b> throttle</span>
+    <span><b>F</b> flaps</span>
+    <span><b>G</b> gear</span>
+    <span><b>B</b> brakes</span>
+    <span><b>X</b> drop cargo</span>
+    <span><b>P</b> pause</span>
+    <span><b>M</b> mute</span>
+  </div>
+</div>
+<script src="src/flight-model.js"></script>
+<script src="src/islands.js"></script>
+<script src="src/campaign.js"></script>
+<script src="src/soundscape.js"></script>
+<script src="src/controls.js"></script>
+<script src="src/cockpit.js"></script>
+<script src="src/scenery.js"></script>
+<script src="src/boot.js"></script>
 </body>
 </html>

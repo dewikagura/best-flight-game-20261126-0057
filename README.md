@@ -1,76 +1,101 @@
-# Cendrawasih Airlift — Island Courier Flight
+[![make.fun · best-flight-game-20261126-0057](https://make.fun/badge/best-flight-game-20261126-0057.svg)](https://make.fun/bounty/best-flight-game-20261126-0057?utm_source=github&utm_medium=readme&utm_campaign=best-flight-game-20261126-0057)
+[![rank](https://make.fun/badge/best-flight-game-20261126-0057/dewikagura/best-flight-game-20261126-0057/rank.svg)](https://make.fun/bounty/best-flight-game-20261126-0057)
+[![reward](https://make.fun/badge/best-flight-game-20261126-0057/dewikagura/best-flight-game-20261126-0057/reward.svg)](https://make.fun/bounty/best-flight-game-20261126-0057)
 
-[![make.fun](https://make.fun/badge/best-flight-game-20261126-0057.svg)](https://make.fun/bounty/best-flight-game-20261126-0057?ref=6t1r9fj9)
-[![rank](https://make.fun/badge/best-flight-game-20261126-0057/dewikagura/best-flight-game-20261126-0057/rank.svg)](https://make.fun/bounty/best-flight-game-20261126-0057?ref=6t1r9fj9)
-[![reward](https://make.fun/badge/best-flight-game-20261126-0057/dewikagura/best-flight-game-20261126-0057/reward.svg)](https://make.fun/bounty/best-flight-game-20261126-0057?ref=6t1r9fj9)
+# Cendrawasih Airlift — Papua Bush Courier
 
-A bush-plane courier game over the Indonesian archipelago, built for the
-[best-flight-game](https://make.fun/bounty/best-flight-game-20261126-0057?ref=6t1r9fj9)
-bounty on make.fun. Fly a little Cendrawasih (bird-of-paradise) cargo plane
-between island strips: thread the ring gates, drop the crate on the painted
-target, and put her down gently on the runway — then do it all again on the
-next island chain, with stronger wind and tighter rings.
+A complete flight game that runs offline in a desktop browser from its own
+files. You fly a battered old Caravan across the islands of Papua: mail,
+eggs, medevacs, night runs, monsoon storms — twelve courier missions, one
+airplane, and a lot of short dirt strips.
 
-## Play
+## Play it
 
-Open `game/index.html` in a desktop browser. It plays offline — no network
-requests, no libraries, no audio files (every sound is synthesised live
-with WebAudio).
+Serve `game/` with any static server and open `game/index.html`, or just
+open the file in desktop Chrome. No network, no build step, no downloads:
+every script, sound and pixel is in the repository. Sound is synthesised
+live with WebAudio (engine, wind, chimes) — click once to let the browser
+start audio.
 
-| Control | What it does |
+## How to fly
+
+| Key | Does |
 | --- | --- |
-| ↑ / ↓ or W / S | Pitch the nose up / down |
-| ← / → or A / D | Throttle down / up |
-| Space | Drop the cargo crate |
-| P | Pause |
-| M | Mute |
-| Mouse / touch drag | Steer: up/down pitches, left/right throttles |
-| Enter / click | Take off, resume, fly again |
+| ↑ / ↓ (or W / S) | Pitch up / down |
+| → / ← (or D / A) | Throttle up / down |
+| F | Flaps (0 → 1 → 2) |
+| G | Landing gear up / down |
+| B or Space | Brakes |
+| X | Drop cargo (sea-drop mission) |
+| P | Pause · M mute · R restart · Esc menu |
 
-## The flying
+Lift follows your angle of attack: pull back to climb, push forward to
+descend, and keep the speed above the stall or the nose drops by itself.
+Flaps let you fly slower for short strips; the gear must be down to land.
+Watch the wind sock, the fuel gauge and the stall lamp — they are the
+difference between a courier and a statistic.
 
-Speed makes lift and lift fights gravity, so there is a real trim speed:
-push the throttle and she climbs, pull it back and she sinks, and below
-stall speed the wings stop flying and she drops. Wind gusts push the nose
-around, and a damaged airframe wobbles more. Fuel burns with the throttle,
-so every finished mission pays fuel back — run dry over the sea and you
-ditch; glide onto a strip and the ground crew refuels you. The HUD shows
-score, level, mission, time, fuel, hull, altitude, speed, heading, wind,
-rings and combo at a glance.
+## Flying tips (from the flight model)
 
-## Missions
+- **Takeoff:** full throttle, pull back gently once the speed passes
+  40 m/s. The wheels leave the ground around 45 m/s.
+- **Cruise:** 50–60 m/s (95–115 kt) at about 60% throttle, pitch near
+  level. The wing is happiest there.
+- **Approach:** slow to 45–55 m/s, flaps 1, gear down, throttle around
+  55–60%. Come down at 300–500 ft/min and flare over the numbers.
+- **Stall:** clean wing stalls near 38 m/s, full flaps near 30 m/s.
+  If the stall lamp lights and the nose drops, push forward and add
+  power — the wing flies again once the speed is back above 42 m/s.
+  Never try to climb out of a stall by pulling harder.
+- **Short strips:** flaps 2 and brakes (B) stop you in half the
+  distance, but flaps 2 at cruise speed is a brick — slow down first.
+- **Fuel:** a full tank is about 420–720 kg depending on the mission;
+  at cruise you burn roughly 0.7 kg/s. The long haul has a fuel stop
+  for a reason.
 
-Each level is three missions in a row, and finishing all three opens the
-next island chain (three chains in total):
+## The campaign
 
-1. **Ring Run** — fly through all 6 gates. Dead centre pays a bonus, and
-   clean rings in a row build a combo that multiplies the next reward.
-2. **Cargo Drop** — release the crate over the painted target on the strip.
-   On target pays most, close pays some, the sea pays nothing.
-3. **Island Landing** — touch down on the strip inside the sink, speed and
-   pitch limits. A butter-smooth landing pays extra; a hard one bends the
-   airframe.
+Twelve missions in four chapters, each with its own weather, cargo and
+twist: a calm dawn mail run with a tutorial, a fragile egg delivery, a
+storm front with crosswind, a night mail run by runway lights, a 420 m
+cliff strip, a timed medevac, a fuel-stop long haul, a mountain pass with
+downdrafts, a sea drop onto a boat, a full monsoon, and the four-stop
+grand finale from Biak to Merauke. Landings are scored on softness, cargo
+condition, time, fuel left and smoothness — three stars if you fly it
+clean. Finish a run to unlock the next; best scores are kept on your
+machine.
 
-Crash into a hillside, ditch in the sea, or let the mission clock run out
-and the run ends — press R to fly again.
+## What is inside
 
-## Screenshots
+- `game/index.html` + `game/style.css` — the page shell.
+- `game/src/flight-model.js` — lift, drag, thrust, stall, wind, ground
+  effect, takeoffs and landings.
+- `game/src/islands.js` — the seeded island chain, airstrips, villages,
+  painted terrain and the four time-of-day palettes.
+- `game/src/campaign.js` — the twelve missions, scoring and progression.
+- `game/src/cockpit.js` — lit instruments, HUD, guidance and all screens.
+- `game/src/scenery.js` — sky, sea, clouds, the built-looking plane and
+  the chase camera.
+- `game/src/soundscape.js` — synthesised WebAudio: engine, wind, chimes.
+- `game/src/controls.js` — keyboard, mouse and the autopilot used for
+  screenshots.
+- `game/src/boot.js` — the state machine, the fixed-step loop and the
+  mission flow.
+- `main.ts` — hands the game in: copies `game/` and `screenshots/` and
+  writes `dossier.json` (Node 22, standard library only).
+- `screenshots/` — four real renders of the game running in a browser.
 
-`?shot=cover` mid-flight over the volcano · `?shot=rings` lined up on the
-next gate · `?shot=landing` on final approach · `?shot=storm` fighting a
-gust in heavy weather. The four screenshots in `screenshots/` are real
-renders of this game's own code at those states.
+The look follows the toon field notes: ink outlines in warm brown, one
+warm/cool palette per mood, painted surfaces instead of flat colour, dense
+set dressing on every island, and a camera that follows with a soft
+look-ahead and never fights the pilot.
 
-## Build
+## Originality
 
-`main.ts` (Node 22, standard library only) copies `game/` and
-`screenshots/` into `$MAKEFUN_OUTPUT_DIR`, checks the screenshot caps,
-and writes `dossier.json` with the kit's `buildDossier`:
+Everything here is original: the idea, the art, the sounds, the names and
+the missions. The bird on the tail is a cendrawasih (bird-of-paradise),
+Papua's own. No commercial game, character, art or music is copied.
 
-```sh
-MAKEFUN_OUTPUT_DIR=/tmp/out node main.ts
-```
+---
 
-## Licence
-
-MIT — see [LICENSE](LICENSE).
+Made for the [make.fun best flight game bounty](https://make.fun/bounty/best-flight-game-20261126-0057) · ref `6t1r9fj9`
